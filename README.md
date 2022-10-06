@@ -6,4 +6,10 @@ This repository contains all assignments and coursework for CAAP 30239 taught in
 
 ## Assignments
 ### Week 1
-- Data Selfie
+- Data Selfie and about me
+- Learning HTML
+
+### Week 2
+- Data humanism
+- Learning JS
+- Finding data for the final project
