@@ -15,6 +15,7 @@ The NHL API is the source of truth for all stats in the NHL.
 Specifically, one can call the endpoint and look up stats for a player for a specific season. 
 The API also allows you to get the gamelog for a specific game, allowing you to analyze various gametime events. 
 As linked above, I have included a documentation for specific endpoints for the API. 
+I will most likely focus on seasonal stats for individual players
 
 ## Why am I interested?
 I am interested in NHL statistics because I have always been interested in sports. 
@@ -79,6 +80,12 @@ I have also attached a CSV file with player stats in various game situations (5v
 From here, one can see a players overall season stats. We can normalize them to a per game basis or a per 30 game basis for different statistics. 
 
 ## Concerns about the data
+Using the NHL API is hard to gather overall league stats, as one would need to call the API many times for all players.
+Instead, to get overall league stats, I can use other secondary sources to get league stats by preprocessing a CSV file. 
+I have included the CSV file in this folder for reference. 
+Another concern I have about the data is that it may be hard to contextualize without aditional information. 
+For example, each player plays different positions and on different lines that have different use cases (ex. defending line vs. scoring line).
+With this, while some players may look like they have worse stats in comparison, it doesn't put their actual value into context.
 
 ## Other secondary sources
 This data is primary, as it comes from the official NHL organization and provides a lot of information from game logs to individual player information. 
