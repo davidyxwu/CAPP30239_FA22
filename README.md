@@ -13,3 +13,4 @@ This repository contains all assignments and coursework for CAAP 30239 taught in
 - Data humanism
 - Learning JS
 - Finding data for the final project
+- Project 1: Dear Data
