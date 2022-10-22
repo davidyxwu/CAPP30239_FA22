@@ -1,6 +1,6 @@
 ## Week 4
 
-Tuesday we discussed analyzing and evaluating data visualizations.
+Tuesday we discussed storytelling through data visualization. We had many readings and videos explaining story telling technique through data, shifting the focus of our data visualization from ourselves towards the audience.
 
 On Thursday we learned how to create a line chart, area chart, and multiline chart using D3.
 
