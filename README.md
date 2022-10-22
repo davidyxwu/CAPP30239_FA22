@@ -18,3 +18,7 @@ This repository contains all assignments and coursework for CAAP 30239 taught in
 ### Week 3
 - Data visualization theorists: Stephen Few, Edward Tufte, and Alberto Cairo
 - Bar charts in D3: Covid 19 bar chart and library visits bar chart
+
+### Week 4
+- Story telling through data visualization
+- Line, area, and multiline charts in D3
