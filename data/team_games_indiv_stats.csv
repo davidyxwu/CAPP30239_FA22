@@ -1,0 +1,83 @@
+game_num,team,team_result,away_team,home_team,away_team_goals,home_team_goals
+1,Colorado Avalanche,1,Chicago Blackhawks,Colorado Avalanche,2,4
+2,Colorado Avalanche,-1,St. Louis Blues,Colorado Avalanche,5,3
+3,Colorado Avalanche,-1,Colorado Avalanche,Washington Capitals,3,6
+4,Colorado Avalanche,-1,Colorado Avalanche,Florida Panthers,1,4
+5,Colorado Avalanche,0,Colorado Avalanche,Tampa Bay Lightning,3,3
+6,Colorado Avalanche,-1,Vegas Golden Knights,Colorado Avalanche,3,1
+7,Colorado Avalanche,1,Colorado Avalanche,St. Louis Blues,4,3
+8,Colorado Avalanche,1,Minnesota Wild,Colorado Avalanche,1,4
+9,Colorado Avalanche,-1,Columbus Blue Jackets,Colorado Avalanche,5,4
+10,Colorado Avalanche,-1,Colorado Avalanche,Columbus Blue Jackets,2,4
+11,Colorado Avalanche,1,Vancouver Canucks,Colorado Avalanche,1,7
+12,Colorado Avalanche,1,San Jose Sharks,Colorado Avalanche,2,6
+13,Colorado Avalanche,1,Colorado Avalanche,Vancouver Canucks,4,2
+14,Colorado Avalanche,1,Colorado Avalanche,Seattle Kraken,7,3
+15,Colorado Avalanche,1,Ottawa Senators,Colorado Avalanche,5,7
+16,Colorado Avalanche,1,Anaheim Ducks,Colorado Avalanche,2,5
+17,Colorado Avalanche,-1,Colorado Avalanche,Dallas Stars,1,3
+18,Colorado Avalanche,1,Nashville Predators,Colorado Avalanche,2,6
+19,Colorado Avalanche,-1,Colorado Avalanche,Toronto Maple Leafs,3,8
+20,Colorado Avalanche,1,Colorado Avalanche,Montréal Canadiens,4,1
+21,Colorado Avalanche,-1,Colorado Avalanche,Ottawa Senators,5,6
+22,Colorado Avalanche,1,Colorado Avalanche,Philadelphia Flyers,7,5
+23,Colorado Avalanche,1,Colorado Avalanche,New York Rangers,7,3
+24,Colorado Avalanche,1,Detroit Red Wings,Colorado Avalanche,3,7
+25,Colorado Avalanche,1,Florida Panthers,Colorado Avalanche,2,3
+26,Colorado Avalanche,1,New York Rangers,Colorado Avalanche,2,4
+27,Colorado Avalanche,-1,Colorado Avalanche,Nashville Predators,2,5
+28,Colorado Avalanche,1,Tampa Bay Lightning,Colorado Avalanche,2,3
+29,Colorado Avalanche,1,Colorado Avalanche,Detroit Red Wings,5,2
+30,Colorado Avalanche,1,Colorado Avalanche,Buffalo Sabres,5,3
+31,Colorado Avalanche,-1,Colorado Avalanche,Boston Bruins,1,5
+32,Colorado Avalanche,1,Colorado Avalanche,Vegas Golden Knights,2,0
+33,Colorado Avalanche,-1,Dallas Stars,Colorado Avalanche,4,1
+34,Colorado Avalanche,1,Colorado Avalanche,Dallas Stars,4,0
+35,Colorado Avalanche,1,Anaheim Ducks,Colorado Avalanche,2,4
+36,Colorado Avalanche,1,Colorado Avalanche,Chicago Blackhawks,4,3
+37,Colorado Avalanche,1,Winnipeg Jets,Colorado Avalanche,1,7
+38,Colorado Avalanche,1,Toronto Maple Leafs,Colorado Avalanche,4,5
+39,Colorado Avalanche,1,Seattle Kraken,Colorado Avalanche,3,4
+40,Colorado Avalanche,-1,Colorado Avalanche,Nashville Predators,4,5
+41,Colorado Avalanche,0,Arizona Coyotes,Colorado Avalanche,3,3
+42,Colorado Avalanche,1,Colorado Avalanche,Arizona Coyotes,5,0
+43,Colorado Avalanche,0,Minnesota Wild,Colorado Avalanche,3,3
+44,Colorado Avalanche,1,Colorado Avalanche,Anaheim Ducks,2,0
+45,Colorado Avalanche,1,Colorado Avalanche,Los Angeles Kings,4,1
+46,Colorado Avalanche,1,Montréal Canadiens,Colorado Avalanche,2,3
+47,Colorado Avalanche,1,Chicago Blackhawks,Colorado Avalanche,0,2
+48,Colorado Avalanche,1,Boston Bruins,Colorado Avalanche,3,4
+49,Colorado Avalanche,1,Colorado Avalanche,Chicago Blackhawks,6,4
+50,Colorado Avalanche,1,Buffalo Sabres,Colorado Avalanche,1,4
+51,Colorado Avalanche,0,Arizona Coyotes,Colorado Avalanche,2,2
+52,Colorado Avalanche,1,Winnipeg Jets,Colorado Avalanche,3,6
+53,Colorado Avalanche,1,Colorado Avalanche,Vegas Golden Knights,3,2
+54,Colorado Avalanche,1,New York Islanders,Colorado Avalanche,3,5
+55,Colorado Avalanche,-1,Colorado Avalanche,Arizona Coyotes,1,2
+56,Colorado Avalanche,-1,Calgary Flames,Colorado Avalanche,4,3
+57,Colorado Avalanche,1,Colorado Avalanche,New York Islanders,5,4
+58,Colorado Avalanche,-1,Colorado Avalanche,New Jersey Devils,3,5
+59,Colorado Avalanche,-1,Colorado Avalanche,Carolina Hurricanes,0,2
+60,Colorado Avalanche,1,Calgary Flames,Colorado Avalanche,0,3
+61,Colorado Avalanche,1,Colorado Avalanche,Los Angeles Kings,3,0
+62,Colorado Avalanche,1,Colorado Avalanche,San Jose Sharks,5,3
+63,Colorado Avalanche,1,Edmonton Oilers,Colorado Avalanche,2,3
+64,Colorado Avalanche,-1,Vancouver Canucks,Colorado Avalanche,3,1
+65,Colorado Avalanche,1,Philadelphia Flyers,Colorado Avalanche,3,6
+66,Colorado Avalanche,-1,Colorado Avalanche,Minnesota Wild,2,3
+67,Colorado Avalanche,1,Colorado Avalanche,Calgary Flames,2,1
+68,Colorado Avalanche,1,San Jose Sharks,Colorado Avalanche,2,4
+69,Colorado Avalanche,1,Pittsburgh Penguins,Colorado Avalanche,2,3
+70,Colorado Avalanche,1,Colorado Avalanche,Pittsburgh Penguins,6,4
+71,Colorado Avalanche,1,Colorado Avalanche,Winnipeg Jets,5,4
+72,Colorado Avalanche,0,Colorado Avalanche,Edmonton Oilers,1,1
+73,Colorado Avalanche,1,Los Angeles Kings,Colorado Avalanche,3,9
+74,Colorado Avalanche,1,New Jersey Devils,Colorado Avalanche,1,3
+75,Colorado Avalanche,1,Carolina Hurricanes,Colorado Avalanche,4,7
+76,Colorado Avalanche,-1,Washington Capitals,Colorado Avalanche,3,2
+77,Colorado Avalanche,-1,Colorado Avalanche,Seattle Kraken,2,3
+78,Colorado Avalanche,-1,Colorado Avalanche,Edmonton Oilers,3,6
+79,Colorado Avalanche,-1,Colorado Avalanche,Winnipeg Jets,1,4
+80,Colorado Avalanche,1,St. Louis Blues,Colorado Avalanche,3,5
+81,Colorado Avalanche,0,Nashville Predators,Colorado Avalanche,4,4
+82,Colorado Avalanche,-1,Colorado Avalanche,Minnesota Wild,1,4
