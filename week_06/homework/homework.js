@@ -100,7 +100,7 @@ function countLineChart(data) {
         .attr("dx", "-0.5em")
         .attr("y", 10)
         .attr("transform", "rotate(-90)")
-        .text("Number of Police Murders");
+        .text("Number of Police Killings");
 
     // Drawing the line
     let line = d3
@@ -266,7 +266,7 @@ function raceBar(data) {
         .attr("y", barHeight)
         .attr("dx", "0.5em")
         .attr("dy", "-0.5em")
-        .text("Number of murders");
+        .text("Number of Killings");
 
     barSVG
         .append("text")
