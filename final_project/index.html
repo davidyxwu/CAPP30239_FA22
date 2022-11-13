@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCAPP Data Visualization for Public Policy</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+        }
+
+        #container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-transform: none;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-transform: none;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 20px;
+            text-transform: none;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        p,
+        select,
+        ol,
+        li,
+        label {
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
+
+        #container {
+            width: 100%;
+        }
+
+        .y-axis path.domain {
+            display: none;
+        }
+
+        .y-axis line {
+            stroke: #ddd;
+            stroke-dasharray: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Colorado Avalanche 2021-2022 Regular Season</h1>
+        <div id="game_calendar">
+            <h2>Overview of games</h2>
+        </div>
+
+        <div id="shots">
+            <h2>Shots Analysis</h2>
+            <p>Analysis of shots</p>
+            <div id="shotsfor">
+                <h3>Shots Forced</h3>
+            </div>
+            <div id="shotsAgainst">
+                <h3>Shots Against</h3>
+            </div>
+        </div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script src="colorlegend.js"></script>
+    <script src="calendar.js"></script>
+    <script src="stacked_bar_horiz.js"></script>
+    <script src="shots_analysis.js"></script>
+
+</html>
