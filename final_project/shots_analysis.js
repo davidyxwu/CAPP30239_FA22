@@ -13,7 +13,6 @@ d3.csv("../data/team_stats_shots.csv").then((data) => {
             total: parseInt(d[category]),
         }))
     );
-    console.log(shotsFor);
 
     var shotsForChart = StackedBarChart(shotsFor, {
         x: (d) => d.total,
@@ -49,7 +48,6 @@ d3.csv("../data/team_stats_shots.csv").then((data) => {
             total: parseInt(d[category]),
         }))
     );
-    console.log(shotsAgainst);
 
     var shotsAgainstChart = StackedBarChart(shotsAgainst, {
         x: (d) => d.total,
