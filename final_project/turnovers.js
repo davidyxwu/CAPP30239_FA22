@@ -53,8 +53,8 @@ d3.csv("../data/team_stats_turnovers.csv").then((data) => {
         .attr("text-anchor", "end")
         .attr("x", width - margin.right)
         .attr("y", height)
-        .attr("dx", "0.5em") // dx and dy can be used for shifting position
-        .attr("dy", "-0.5em") // see https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dy
+        .attr("dx", "0.5em")
+        .attr("dy", "-0.5em")
         .text("Giveaways");
 
     svg.append("text")
