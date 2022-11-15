@@ -3,7 +3,7 @@ import json
 import requests
 from collections import defaultdict
 
-url = "https://statsapi.web.nhl.com/api/v1/game/202102{gameNum}/boxscore"
+url = "https://statsapi.web.nhl.com/api/v1/game/202102{gameNum}/feed/live"
 total_games = 1312
 
 # Generic function to filter rows by fields and write it to a new csv
@@ -108,6 +108,43 @@ def write_game_data_indiv(team):
         writer.writerow(fields)
         writer.writerows(rows)
 
+def write_shot_data(team):
+    fields = ['team', 'player' 'result', 'x', 'y']
+    rows = []
+    shotTypes = ["SHOT", "MISSED_SHOT", "BLOCKED_SHOT", "GOAL"]
+    for i in range(1, total_games + 1):
+        print(i)
+        try:
+            r = requests.get(url.format(gameNum=numToString(i))).json()
+        except requests.exceptions.RequestException as e:
+            raise SystemExit(e)
+        # If a game does not have play data
+        if len(r['liveData']['plays']['allPlays']) == 0:
+            continue
+        # Iterate through all play data to select shots
+        for i in range(0, len(r['liveData']['plays']['allPlays'])):
+            if (r['liveData']['plays']['allPlays'][i]['result']['eventTypeId'] in shotTypes):
+                shot_team = r['liveData']['plays']['allPlays'][i]['team']['name']
+                if (shot_team != team):
+                    continue
+                shooter = r['liveData']['plays']['allPlays'][i]['players'][0]['player']['fullName']
+                result = r['liveData']['plays']['allPlays'][i]['result']['eventTypeId']
+                if (r['liveData']['plays']['allPlays'][i]['coordinates']):
+                    x = r['liveData']['plays']['allPlays'][i]['coordinates']['x']
+                    y = r['liveData']['plays']['allPlays'][i]['coordinates']['y']
+                    if x < 0:
+                        x = -x
+                        y = -y
+                else:
+                    x = None
+                    y = None
+                rows.append([shot_team, shooter, result, x, y])
+    print(len(rows))
+    with open('team_shot_map.csv', 'w') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(fields)
+        writer.writerows(rows)
+
 if __name__ == "__main__":
     """
     filter_team_stats(['team',
@@ -146,5 +183,7 @@ if __name__ == "__main__":
 
 
     filter_game_data_cummulative('Colorado Avalanche')
-    """
+
     write_game_data_indiv('Colorado Avalanche')
+    """
+    write_shot_data('Colorado Avalanche')

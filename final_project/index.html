@@ -59,6 +59,7 @@
             stroke-dasharray: 2;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="rinkstyle.css">
 </head>
 
 <body>
@@ -75,6 +76,9 @@
         <div id="shots">
             <h2>Shots Analysis</h2>
             <p>Analysis of shots</p>
+            <div id="shotMap">
+                <h3>Shot Map</h3>
+            </div>
             <div id="shotsfor">
                 <h3>Shots Forced</h3>
             </div>
@@ -95,12 +99,15 @@
         </div>
     </div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-
+    <script src="https://d3js.org/d3-contour.v1.min.js"></script>
+    <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
     <script src="colorlegend.js"></script>
     <script src="calendar.js"></script>
     <script src="cummulative_game_stats.js"></script>
     <script src="stacked_bar_horiz.js"></script>
     <script src="shots_analysis.js"></script>
     <script src="turnovers.js"></script>
+    <script src="rink_map.js"></script>
+    <script src="shot_chart.js"></script>
 
 </html>
