@@ -1,5 +1,5 @@
 d3.csv("../data/team_stats_shots.csv").then((data) => {
-    const width = 950;
+    const width = 900;
     const shots_for_zDomain = [
         "shotsOnGoalFor",
         "missedShotsFor",
@@ -35,39 +35,43 @@ d3.csv("../data/team_stats_shots.csv").then((data) => {
     d3.select("#shotsfor").node().appendChild(shotsForLegend);
     d3.select("#shotsfor").node().appendChild(shotsForChart);
 
-    const shots_against_zDomain = [
-        "shotsOnGoalAgainst",
-        "missedShotsAgainst",
-        "blockedShotAttemptsAgainst",
+    const shotsDanger_zDomain = [
+        "lowDangerShotsFor",
+        "mediumDangerShotsFor",
+        "highDangerShotsFor",
     ];
 
-    var shotsAgainst = shots_against_zDomain.flatMap((category) =>
+    var shotsDanger = shotsDanger_zDomain.flatMap((category) =>
         data.map((d) => ({
             team: d.team,
             category,
-            total: parseInt(d[category]),
+            total:
+                (parseInt(d[category]) /
+                    (parseInt(d["shotAttemptsFor"]) -
+                        parseInt(d["blockedShotAttemptsFor"]))) *
+                100,
         }))
     );
 
-    var shotsAgainstChart = StackedBarChart(shotsAgainst, {
+    var shotsDangerChart = StackedBarChart(shotsDanger, {
         x: (d) => d.total,
         y: (d) => d.team,
         z: (d) => d.category,
-        xLabel: "Total Shots Against",
+        xLabel: "Shot Danger (%)",
         yDomain: d3.groupSort(
-            shotsAgainst,
-            (D) => -d3.sum(D, (d) => d.total),
+            shotsDanger,
+            (D) => d3.sum(D, (d) => d.total),
             (d) => d.team
         ),
-        zDomain: shots_against_zDomain,
+        zDomain: shotsDanger_zDomain,
         colors: d3.schemeCategory10,
         width,
     });
-    var shotsAgainstLegend = Legend(
-        d3.scaleOrdinal(shots_against_zDomain, d3.schemeCategory10),
+    var shotsDangerLegend = Legend(
+        d3.scaleOrdinal(shotsDanger_zDomain, d3.schemeCategory10),
         { title: "Shot type", tickSize: 0, width: 500 }
     );
 
-    d3.select("#shotsAgainst").node().appendChild(shotsAgainstLegend);
-    d3.select("#shotsAgainst").node().appendChild(shotsAgainstChart);
+    d3.select("#shotsDanger").node().appendChild(shotsDangerLegend);
+    d3.select("#shotsDanger").node().appendChild(shotsDangerChart);
 });

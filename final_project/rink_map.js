@@ -68,7 +68,6 @@ var RINK_MAP = function RinkMap(config) {
 
     // Get rink scale, scale all rink config distances
     var rinkScale = p.desiredWidth / RINK_CONFIG.RINK_WIDTH;
-    console.log(rinkScale);
     for (var param in RINK_CONFIG) {
         RINK_CONFIG[param] = rinkScale * RINK_CONFIG[param];
     }
@@ -690,6 +689,5 @@ var RINK_MAP = function RinkMap(config) {
                 "translate(" + p.margins.left + "," + p.margins.top + ")"
             );
     }
-    console.log(chart);
     return chart;
 };

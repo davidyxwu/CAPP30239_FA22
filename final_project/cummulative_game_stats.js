@@ -46,13 +46,6 @@ function multiline(data, div_id, y_label) {
             .attr("d", line);
 
         let lastEntry = teamData[teamData.length - 18]; //last piece of data to position text x and y
-
-        g.append("text")
-            .text(team)
-            .attr("x", x(lastEntry.Game) + 25)
-            .attr("y", y(lastEntry.Value) - 5)
-            .attr("dominant-baseline", "middle")
-            .attr("fill", color);
     }
     svg.append("text")
         .attr("class", "x-label")
@@ -69,6 +62,11 @@ function multiline(data, div_id, y_label) {
         .attr("y", 15)
         .attr("transform", "rotate(-90)")
         .text(y_label);
+    var colorLegend = Legend(
+        d3.scaleOrdinal(["Colorado Avalanche", "League"], ["red", "blue"]),
+        { title: "Teams", tickSize: 0, width: 500 }
+    );
+    d3.select(div_id).node().appendChild(colorLegend);
 }
 
 d3.csv("../data/team_games_cummulative_stats.csv").then((data) => {
