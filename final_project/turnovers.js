@@ -77,7 +77,7 @@ d3.csv("../data/team_stats_turnovers.csv").then((data) => {
         .style("border-radius", "5px")
         .style("padding", "5px");
 
-    d3.selectAll("circle")
+    svg.selectAll("circle")
         .on("mouseover", function (event, d) {
             d3.select(this).attr("fill", "red");
             tooltip
@@ -110,7 +110,7 @@ d3.csv("../data/team_stats_turnovers.csv").then((data) => {
         else if (d.type == "Min" || d.type == "Max") return "maroon";
         return "teal";
     }
-    let height = 150,
+    let height = 200,
         width = 800,
         margin = { top: 10, right: 50, bottom: 50, left: 50 };
     var dataPoints = [];
@@ -129,8 +129,8 @@ d3.csv("../data/team_stats_turnovers.csv").then((data) => {
         .range([margin.left, width - margin.right]);
     var plot = boxplot()
         .scale(x)
-        .bandwidth(50)
-        .jitter(true)
+        .bandwidth(75)
+        .jitter(0.3)
         .opacity(0.5)
         .showInnerDots(true);
     svg.datum(stats).attr("color", "mediumpurple").call(plot);
@@ -151,17 +151,16 @@ d3.csv("../data/team_stats_turnovers.csv").then((data) => {
         { type: "Max", value: stats.fiveNums[4] },
     ];
     svg.append("g")
-        .selectAll("ellipse")
+        .selectAll("circle")
         .data(plotStats)
-        .join("ellipse")
+        .join("circle")
         .attr("cx", (d) => x(d.value))
         .attr("cy", 0)
-        .attr("rx", 3)
-        .attr("ry", 3)
+        .attr("r", 3)
         .attr("transform", `translate(0,${height - margin.bottom})`)
         .attr("opacity", 1)
         .style("fill", (d) => color(d));
-    var points = svg.selectAll("g.ellipse").data(data).enter().append("g");
+    var points = svg.selectAll("g.circle").data(data).enter().append("g");
     points
         .append("text")
         .data(plotStats)

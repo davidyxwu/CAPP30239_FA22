@@ -7,101 +7,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCAPP Data Visualization for Public Policy</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600" rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Work Sans', Arial, Helvetica, sans-serif;
-        }
-
-        #container {
-            max-width: 1000px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: 32px;
-            text-transform: none;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 24px;
-            text-transform: none;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        h3 {
-            font-size: 20px;
-            text-transform: none;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        p,
-        select,
-        ol,
-        li,
-        label {
-            max-width: 600px;
-            text-align: center;
-            margin: 0 auto;
-            padding-bottom: 10px;
-        }
-
-        .y-axis path.domain {
-            display: none;
-        }
-
-        .y-axis line {
-            stroke: #ddd;
-            stroke-dasharray: 2;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="rinkstyle.css">
 </head>
 
 <body>
     <div id="container">
         <h1>Colorado Avalanche 2021-2022 Regular Season</h1>
-        <div id="game_calendar">
-            <h2>Overview of games</h2>
-        </div>
+        <p>In 2021-2022, the Colorado Avalanche won the Stanley Cup after finishing second in points in the regular
+            season. One of their main successes was their offensive prowess, led by superstar Nathan MacKinnon. In this
+            article, I will present context on the Avalanche's 2021-2022 season and offensive statistics.</p>
+        <div id="seasonalTrends">
+            <h2>An overview of Seasonal Trends</h2>
 
-        <div id="winsLine">
-            <h2>Win line graph</h2>
-        </div>
-
-        <div id="shots">
-            <h2>Shots Analysis</h2>
-            <p>Analysis of shots</p>
-            <div id="shotMap">
-                <h3>Shot Map</h3>
+            <div id="game_calendar">
+                <h3>2021-2022 Colorado Avalanche Game Calendar</h3>
             </div>
+
+            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
+                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
+
+            <div id="winsLine">
+                <h3>Win line graph</h3>
+            </div>
+
+            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
+                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
+
             <div id="shotsLine">
                 <h3>Shots Line Graph</h3>
             </div>
-            <div id="shotsfor">
-                <h3>Shots Forced</h3>
+
+            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
+                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
+
+            <div id="goalsLine">
+                <h2>Goal line graph</h2>
             </div>
-            <div id="shotsDanger">
-                <h3>Shot Danger</h3>
-            </div>
+
+            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
+                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
         </div>
 
-        <div id="goalsLine">
-            <h2>Goal line graph</h2>
+
+
+        <div id="shots">
+            <h2>Shots Analysis</h2>
+            <p>This section will analyze the shots statistics.</p>
+
+            <div id="shotMap">
+                <h3>Shot Map</h3>
+            </div>
+
+            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
+                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
+
+            <div id="shotsfor">
+                <h3>Shots and their results by team</h3>
+            </div>
+
+            <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
+                    rel="noopener noreferrer">Moneypuck</a></small>
+
+            <div id="shotsDanger">
+                <h3>Shot Danger by team</h3>
+            </div>
+
+            <small>Data and danger metrics from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
+                    rel="noopener noreferrer">Moneypuck</a></small>
         </div>
+
+        <div id="goals">
+            <h2>Goals Analysis</h2>
+            <p>This section will analyze the goals statistics.</p>
+
+            <div id="goalsMap">
+                <h3>Goals Map</h3>
+            </div>
+
+            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
+                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
+
+            <div id="goalsBox">
+                <h3>Goals Boxplot</h3>
+            </div>
+
+            <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
+                    rel="noopener noreferrer">Moneypuck</a></small>
+
+            <div id="goalsDanger">
+                <h3>Goals Danger by team</h3>
+            </div>
+
+            <small>Data and danger metrics from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
+                    rel="noopener noreferrer">Moneypuck</a></small>
+        </div>
+
 
         <div id="turnovers">
-            <h2>Turnover Analysis</h2>
+            <h2>This section will analyze the goals statistics.</h2>
             <div id="turnoversScatter">
-                <h3>Giveaways vs. Takeaways</h3>
+                <h3>Giveaways vs. Takeaways by team</h3>
             </div>
+
+            <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
+                    rel="noopener noreferrer">Moneypuck</a></small>
+
             <div id="turnoversBox">
                 <h3>Giveaways Box Plot</h3>
             </div>
+
+            <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
+                    rel="noopener noreferrer">Moneypuck</a></small>
+        </div>
+
+        <div id="resources">
+            <h2>Resources</h2>
+            <ul>
+                <li>Overall season trend data from
+                    <a href="https://moneypuck.com/data.htm" target="_blank" rel="noopener noreferrer">Money Puck</a>
+                </li>
+                <li>Game by game season data from the official
+                    <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/" target="_blank"
+                        rel="noopener noreferrer">NHL Stats API</a>
+                </li>
+                <li>Boxplot code sourced from <a href="https://github.com/akngs/d3-boxplot" target="_blank"
+                        rel="noopener noreferrer">Alan Kang</a></li>
+                <li>Color legend code sourced from <a href="https://observablehq.com/@d3/color-legend" target="_blank"
+                        rel="noopener noreferrer">Mike Bostock</a>
+                </li>
+                <li>Stacked bar chart code sourced from <a
+                        href="https://observablehq.com/@d3/stacked-horizontal-bar-chart" target="_blank"
+                        rel="noopener noreferrer">Mike Bostock</a>
+                </li>
+                <li>Rink outline from <a href="https://github.com/war-on-ice/icerink" target="_blank"
+                        rel="noopener noreferrer">Github</a></li>
+                <li>Goal and Shot danger from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
+                        rel="noopener noreferrer">Moneypuck</a></li>
+            </ul>
         </div>
     </div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -115,6 +158,6 @@
     <script src="shots_analysis.js"></script>
     <script src="turnovers.js"></script>
     <script src="rink_map.js"></script>
-    <script src="shot_chart.js"></script>
+    <script src="goals_analysis.js"></script>
 
 </html>

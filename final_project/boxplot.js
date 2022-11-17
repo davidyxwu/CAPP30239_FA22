@@ -7,7 +7,7 @@ function boxplot() {
     let bandwidth = 20;
     let boxwidth = 20;
     let showInnerDots = true;
-    let symbol = boxplotSymbolTick;
+    let symbol = boxplotSymbolDot;
     let opacity = 0.8;
     let jitter = 0.2;
     let key = undefined;
