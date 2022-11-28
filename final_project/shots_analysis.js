@@ -114,7 +114,7 @@ d3.csv("../data/team_shot_map.csv").then((data) => {
     x = d3
         .scaleLinear()
         .domain([0, 100])
-        .range([-1364.7058823529412 / 2, 1364.7058823529412 / 2]);
+        .range([0, 1364.7058823529412 / 2]);
 
     y = d3.scaleLinear().domain([-42.5, 42.5]).range([610, 40]);
 
