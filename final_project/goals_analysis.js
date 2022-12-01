@@ -1,6 +1,8 @@
 // https://www.clickinsight.ca/blog/building-nhl-shot-maps-with-apps-script-bigquery-and-data-studio
 // https://observablehq.com/@mbrownshoes/nhl-shot-and-goal-locations-for-every-goalie?collection=@mbrownshoes/playground
 
+// https://www.reddit.com/r/hockey/comments/skrxfk/high_danger_shots_and_goals_per_team/
+
 d3.csv("../data/team_shot_map.csv").then((data) => {
     const height = 650,
         width = 700,

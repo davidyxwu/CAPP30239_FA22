@@ -8,6 +8,7 @@ function multiline(data, div_id, y_label) {
         .select(div_id)
         .append("svg")
         .attr("viewBox", [0, 0, width, height]);
+
     let x = d3
         .scaleLinear()
         .domain([0, 83])
@@ -66,7 +67,11 @@ function multiline(data, div_id, y_label) {
         d3.scaleOrdinal(["Colorado Avalanche", "League"], ["red", "blue"]),
         { title: "Teams", tickSize: 0, width: 500 }
     );
-    d3.select(div_id).node().appendChild(colorLegend);
+    // ADD SWATCHES
+    var swatchLegend = Swatches(
+        d3.scaleOrdinal(["Colorado Avalanche", "League"], ["red", "blue"])
+    );
+    d3.select(div_id).append("div").node().innerHTML = swatchLegend;
 }
 
 d3.csv("../data/team_games_cummulative_stats.csv").then((data) => {

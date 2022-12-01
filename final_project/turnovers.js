@@ -95,11 +95,12 @@ d3.csv("../data/team_stats_turnovers.csv").then((data) => {
             d3.select(this).attr("fill", "black");
             tooltip.style("visibility", "hidden");
         });
-    var colorLegend = Legend(
-        d3.scaleOrdinal(["Colorado Avalanche", "Other Teams"], ["red", "blue"]),
-        { title: "Teams", tickSize: 0, width: 500 }
+    // ADD SWATCHES
+    var swatchLegend = Swatches(
+        d3.scaleOrdinal(["Colorado Avalanche", "League"], ["red", "blue"])
     );
-    d3.select("#turnoversScatter").node().appendChild(colorLegend);
+    d3.select("#turnoversScatter").append("div").node().innerHTML =
+        swatchLegend;
 });
 
 // Boxplot
