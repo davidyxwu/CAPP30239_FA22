@@ -29,7 +29,6 @@ h3 {
     text-align: center;
 }
 
-p,
 select,
 small,
 ol,
@@ -40,6 +39,15 @@ label {
     margin: 0 auto;
     padding-bottom: 10px;
 }
+
+p {
+    padding-top: 20px;
+    text-indent: 30px;
+    max-width: 1000px;
+    text-align: left;
+    margin: 0 auto;
+}
+
 
 .y-axis path.domain {
     display: none;
