@@ -186,4 +186,10 @@ if __name__ == "__main__":
 
     write_game_data_indiv('Colorado Avalanche')
     """
-    write_shot_data('Colorado Avalanche')
+    #write_shot_data('Colorado Avalanche')
+    filter_team_stats(['team', 'lowDangerGoalsFor',
+                        'mediumDangerGoalsFor',
+                        'highDangerGoalsFor',
+                        'lowDangerShotsFor',
+                        'mediumDangerShotsFor',
+                        'highDangerShotsFor'], "danger_stats.csv")

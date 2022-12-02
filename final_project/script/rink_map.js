@@ -1,3 +1,4 @@
+// Ice rink map sourced from https://github.com/war-on-ice/icerink
 var RINK_MAP = function RinkMap(config) {
     // all distances are in FT
     var RINK_CONFIG = {

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCAPP Data Visualization for Public Policy</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="rinkstyle.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/rinkstyle.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 
         </p>
         <div id="seasonalTrends">
-            <h2>An overview of Seasonal Trends</h2>
+            <h2>An Overview of Seasonal Trends</h2>
 
             <div id="game_calendar">
                 <h3>2021-2022 Colorado Avalanche Game Calendar</h3>
@@ -68,64 +68,6 @@
                 82 game season.
             </p>
 
-            <div id="shotsLine">
-                <h3>Shots On Goal Line Graph</h3>
-            </div>
-
-            <small>This line chart compares the shots on goal in the regular season compared to the
-                expected number given by the league average.</small>
-            <br>
-
-            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
-                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
-
-            <div id="goalsLine">
-                <h2>Goal line graph</h2>
-            </div>
-
-            <small>This line chart compares the goals in the regular season compared to the
-                expected number given by the league average.</small>
-            <br>
-
-            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
-                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
-
-            <p>
-                Additionally, the Avs far outpaced the league average shots on goal and goals scored, showing how
-                dominant their offense stood in comparison to the league.
-            </p>
-        </div>
-
-
-
-        <div id="shots">
-            <h2>Shots Analysis</h2>
-            <p>
-                While we previously saw that the Avs (COL) shot the puck a lot, by examining heuristics such as shot
-                outcome and shot danger, we can better understand the shot makeup that the Avs employed to drive their
-                offense.
-            </p>
-
-            <div id="shotMap">
-                <h3>Shot Map</h3>
-            </div>
-            <small>Shot heat map for the Avalanche.</small>
-            <br>
-
-            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
-                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
-
-            <p>
-                From past goal data, the most dangerous area of the rink is a home plate shaped space that begins in
-                front of an opponent’s net and widens out to the faceoff dots in the offensive zone. As such, offenses
-                try to get “to the dirty areas” to take a majority of their shots right in front of the net. Not only
-                are these shots easier to hit on target, they also help maximize second chances that are close to the
-                net, increasing the likelihood of putting the puck past the goalkeeper. From our shot map, we see that
-                the Avalanche shot a majority of their shots within this zone. Overall, the Avalanche also tended to
-                maximize their shots within the center in front of the net, minimizing shot difficulty.
-
-            </p>
-
             <div id="shotsfor">
                 <h3>Shots and their results by team</h3>
             </div>
@@ -136,65 +78,9 @@
             <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
                     rel="noopener noreferrer">Moneypuck</a></small>
 
-            <p>
-                We see that the Avs had the third highest number of total shots forced in the league, with 4213 total
-                non missed shots.
-            </p>
-
-            <div id="shotsDanger">
-                <h3>Shot Danger by team</h3>
-            </div>
-
-            <small>Stacked bar chart comparing shot danger and their results for all NHL teams.</small>
-            <br>
-            <small>
-                Low Danger Shots: Unblocked Shot attempts with a < 8% probability of being a goal. Low danger shots
-                    accounts for ~75% of shots and ~33% of goals. <br>
-                    Medium Danger Shots: Unblocked Shot attempts with
-                    between>=8% but less than 20% probability of being a goal. Medium danger shots account for ~20% of
-                    shots and ~33% of goals.
-                    <br>
-                    High Danger Shots: Unblocked Shot attempts with >= 20% probability of being a goal. High danger
-                    shots account for ~5% of shots and ~33% of goals.
-            </small>
 
             <small>Data and danger metrics from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
                     rel="noopener noreferrer">Moneypuck</a></small>
-
-            <p>
-                By looking at shot danger statistics (From Moneypuck and based on unblocked shot attempts), we see that
-                while the Avs had a large percentage of their shots be categorized as low danger, they also made sure to
-                maximize on high danger shots as well compared to other teams.
-            </p>
-
-            <p>
-                Thus, the Avs relied on a strategy of shot maximization. By taking loads of shots in front of the net
-                and bringing heat to the goalie, the Avs were able to apply constant pressure, forcing mistakes and
-                bringing forth scoring changes.
-
-            </p>
-        </div>
-
-        <div id="goals">
-            <h2>Goals Analysis</h2>
-            <p>
-                In this section, we analyze goal statistics in order to understand how the Avs capitalized on their
-                shots.
-            </p>
-
-            <div id="goalsMap">
-                <h3>Goals Map</h3>
-            </div>
-
-            <small>Goals heat map for the Avalanche.</small>
-            <br>
-
-            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
-                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
-
-            <p>
-                We see that the Avs scored the majority of their goals from the danger zone in front of the net.
-            </p>
 
             <div id="goalsBox">
                 <h3>Goals Boxplot</h3>
@@ -207,184 +93,133 @@
                     rel="noopener noreferrer">Moneypuck</a></small>
 
             <p>
-                Overall, compared to the league, the Avs finished well above the median and third quartile for goals
-                scored in the league.
+                Additionally, the Avs finished third in the league with total shots, and third in the league for goals
+                scored.
             </p>
+        </div>
 
-            <div id="goalsDanger">
-                <h3>Goals Danger by team</h3>
+
+
+        <div id="shotsGoals">
+            <h2>Where did these shots come from?</h2>
+
+            <div id="shotMap">
+                <h3>Shot Map</h3>
             </div>
-
-            <small>Stacked bar chart comparing goal danger for all NHL teams.</small>
+            <small>Shot heat map for the Avalanche.</small>
             <br>
 
+            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
+                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
+
+            <h2>What Resulted from these shots?</h2>
+
+            <div id="goalsMap">
+                <h3>Goals Map</h3>
+            </div>
+
+            <small>Goals heat map for the Avalanche.</small>
+            <br>
+
+            <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
+                    target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
+
+            <div id="dangerAnalysis">
+                <h2>High Danger Shots and Goals By Team</h2>
+            </div>
+
+            <small>
+                Scatter plot displaying goals per high danger shot vs. high danger shots per game
+            </small>
+            <br>
+            <small>
+                High Danger Shots: Unblocked Shot attempts with >= 20% probability of being a goal. High danger
+                shots account for ~5% of shots and ~33% of goals.
+            </small>
+            <br>
             <small>Data and danger metrics from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
                     rel="noopener noreferrer">Moneypuck</a></small>
 
-            <p>
-                The Avs scored a high amount of low danger shots, indicating that they took advantage of hard to come
-                goal chances from outside the typical danger zone.
-            </p>
-        </div>
 
 
-        <div id="turnovers">
-            <h2>Puck Possession Analysis</h2>
+            <div id="turnovers">
+                <h2>Protecting the Puck = More Scoring Chances</h2>
 
-            <p>
-                In this section, we analyze puck possession: giveaways (pucks turnovered to the other team) and
-                takeaways by team. This allows us to gather how well each team possessed the puck, meaning more offense
-                time and less turnovers.
-            </p>
+                <div id="turnoversBox">
+                    <h3>Giveaways Box Plot</h3>
+                </div>
 
-            <div id="turnoversScatter">
-                <h3>Giveaways vs. Takeaways by team</h3>
-            </div>
-            <small>Giveaways vs. Takeaways in the season for all NHL teams.</small>
-            <br>
+                <small>Giveaways in the season for all NHL teams.</small>
+                <br>
 
+                <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
+                        rel="noopener noreferrer">Moneypuck</a></small>
 
-            <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
-                    rel="noopener noreferrer">Moneypuck</a></small>
-
-            <div id="turnoversBox">
-                <h3>Giveaways Box Plot</h3>
             </div>
 
-            <small>Giveaways in the season for all NHL teams.</small>
-            <br>
+            <div id="conclusion">
+                <h2>Conclusion</h2>
+            </div>
 
-            <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
-                    rel="noopener noreferrer">Moneypuck</a></small>
+            <div id="process">
+                <h2>Reflecting On The Process</h2>
+            </div>
 
-            <p>
-                While the Avs were not necessarily top for taking away the puck, the Avs were very good at protecting
-                the puck, finishing second lowest for total giveaways. By protecting the puck, the Avs are able to
-                maximize their offense time, minimize chances for the other team, and consistently apply offensive
-                pressure on the other team.
-            </p>
+            <div id="resources">
+                <h2>Resources</h2>
+                <ul>
+                    <li>Overall season trend data from
+                        <a href="https://moneypuck.com/data.htm" target="_blank" rel="noopener noreferrer">Money
+                            Puck</a>
+                    </li>
+
+                    <li>Game by game season data from the official
+                        <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/" target="_blank"
+                            rel="noopener noreferrer">NHL
+                            Stats API</a>
+                    </li>
+
+                    <li>Boxplot code sourced from <a href="https://github.com/akngs/d3-boxplot" target="_blank"
+                            rel="noopener noreferrer">Alan Kang</a></li>
+
+                    <li>Color legend code sourced from <a href="https://observablehq.com/@d3/color-legend"
+                            target="_blank" rel="noopener noreferrer">Mike Bostock</a>
+                    </li>
+
+                    <li>Stacked bar chart code sourced from <a
+                            href="https://observablehq.com/@d3/stacked-horizontal-bar-chart" target="_blank"
+                            rel="noopener noreferrer">Mike Bostock</a>
+                    </li>
+
+                    <li>Rink outline from <a href="https://github.com/war-on-ice/icerink" target="_blank"
+                            rel="noopener noreferrer">Github</a></li>
+
+                    <li>Goal and Shot danger from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
+                            rel="noopener noreferrer">Moneypuck</a></li>
+
+                    <li>Research on quantifying shot danger location from <a
+                            href="https://www.nhl.com/kraken/news/seattle-kraken-analytics-with-alison-high-danger-chances/c-328378484"
+                            target="_blank"> Alison Lukan </a></li>
+
+                    <li>Colorado Avalanche 2021-2022 <a
+                            href="https://primetimesportstalk.com/2022/07/01/colorado-avalanche-2021-22-season-recap/"
+                            target="_blank">Season
+                            Recap</a></li>
+
+                    <li><a href="https://www.statmuse.com/nhl/ask/average-winning-margin-for-the-colorado-avalanche"
+                            target="_blank">Stat Muse</a> and <a
+                            href=" https://www.hockey-reference.com/teams/COL/2022.html" target="_blank">Hockey
+                            Reference</a> for NHL statistics</li>
+                </ul>
+            </div>
         </div>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://d3js.org/d3-contour.v1.min.js"></script>
+        <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+        <script src="script/colorlegend.js"></script>
+        <script src="script/charts.js"></script>
+        <script src="script/rink_map.js"></script>
+        <script src="script/main.js"></script>
 
-        <div id="conclusion">
-            <h2>Conclusion</h2>
-            <p>
-                Overall, there are a wide variety of factors that explain the Avs offensive prowess in the 2021-2022
-                regular season. To begin, the Avs piled on shots—especially in danger zones—in order to maximize their
-                chances at goal. By scoring many of their low quality shots, the Avs were able to run an efficient
-                offense that took advantage of all their chances, meaning extra scoring chances compared to other teams.
-                Lastly, by protecting the puck, the Avs were able to maximize their offense time and diminish scoring
-                chances for the other team.
-            </p>
-        </div>
-
-        <div id="process">
-            <h2>Reflecting On The Process</h2>
-            <p>
-                For my final project, I chose to analyze hockey statistics because I have always been interested in
-                sports statistics. However, as I am far less familiar with hockey compared to basketball or baseball, I
-                took this opportunity to analyze the Colorado Avalanche season to gain a basic understanding of hockey
-                analytics.
-            </p>
-
-            <p>
-                My data is primarily sourced from two sources: Money Puck for overall season data and the official NHL
-                Stats API for game by game statistics. When initially faced with the data, I felt overwhelmed in terms
-                of what aspect of the season to focus on. There are a wide variety of stats in the NHL, both offensive,
-                defensive, 5v5, 4v5 etc. meaning analysis could be long winded and unfocused. As such, my initial hurdle
-                was looking at the Avs season and focusing on some of the main reasons they were successful. By reading
-                descriptions of their seasons, it was clear that the Avs offensive prowess was one of the main reasons
-                for their success. As such, I decided to focus on the Avs offense in my project. With this, I was able
-                to select the statistics I was interested in, query the API, and filter the various data points I was
-                interested in and format the data. This data included shot, goal, and puck possession data.
-            </p>
-
-            <p>
-                To begin, I first aimed to give context on the season. To display overall game results, I chose to use a
-                calendar heat map to easily see individual game results at a glance. By using line graphs to display
-                win, shots on goal, and goals over the 82 games, we can understand how the Avalanche surpassed the
-                league average to give context on their historic season.
-            </p>
-
-            <p>
-                To analyze individual heuristics (shot, goal, puck possession), I chose to use a variety of charts. The
-                first chart I used was a heat map binned in hexagons for shots and goals to contextualize the locations
-                of these events on the rink. I chose to use a stacked bar chart (both cumulative and percentage) to
-                easily compare shot and goal statistics across teams and categories. I chose to use a scatter plot to
-                display relationship data (takeaway vs. giveaway) for all teams. Lastly, I chose to use box plots to
-                show distributions of certain statistics to compare them among all the teams.
-            </p>
-
-            <p>
-                Overall, while I was able to come up with many different visualizations for the data I gathered, I also
-                came across many limitations in the process. First, it was hard to contextualize data depending on game
-                state. For example, hockey has many game scenarios (5v5, 4v5, etc.) which allow for different styles of
-                play depending on the situation. While my approach focused on all game situations, by not
-                contextualizing all of the different scenarios, we are unable to understand whether the Avs take
-                advantage of penalties etc. Another limitation I came up against was trying to understand what the Avs
-                did differently compared to other teams. All teams follow similar proven offensive philosophies that
-                maximize scoring chances. However, the Avs scored a high number of their low chances, meaning they were
-                able to take advantage of more chances. While this is one explanation for a difference, there are
-                certainly many other ones that show up when different visualizations are used.
-            </p>
-        </div>
-
-        <div id="resources">
-            <h2>Resources</h2>
-            <ul>
-                <li>Overall season trend data from
-                    <a href="https://moneypuck.com/data.htm" target="_blank" rel="noopener noreferrer">Money Puck</a>
-                </li>
-
-                <li>Game by game season data from the official
-                    <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/" target="_blank"
-                        rel="noopener noreferrer">NHL Stats API</a>
-                </li>
-
-                <li>Boxplot code sourced from <a href="https://github.com/akngs/d3-boxplot" target="_blank"
-                        rel="noopener noreferrer">Alan Kang</a></li>
-
-                <li>Color legend code sourced from <a href="https://observablehq.com/@d3/color-legend" target="_blank"
-                        rel="noopener noreferrer">Mike Bostock</a>
-                </li>
-
-                <li>Stacked bar chart code sourced from <a
-                        href="https://observablehq.com/@d3/stacked-horizontal-bar-chart" target="_blank"
-                        rel="noopener noreferrer">Mike Bostock</a>
-                </li>
-
-                <li>Rink outline from <a href="https://github.com/war-on-ice/icerink" target="_blank"
-                        rel="noopener noreferrer">Github</a></li>
-
-                <li>Goal and Shot danger from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
-                        rel="noopener noreferrer">Moneypuck</a></li>
-
-                <li>Research on quantifying shot danger location from <a
-                        href="https://www.nhl.com/kraken/news/seattle-kraken-analytics-with-alison-high-danger-chances/c-328378484"
-                        target="_blank"> Alison Lukan </a></li>
-
-                <li>Colorado Avalanche 2021-2022 <a
-                        href="https://primetimesportstalk.com/2022/07/01/colorado-avalanche-2021-22-season-recap/"
-                        target="_blank">Season
-                        Recap</a></li>
-
-                <li><a href="https://www.statmuse.com/nhl/ask/average-winning-margin-for-the-colorado-avalanche"
-                        target="_blank">Stat Muse</a> and <a
-                        href=" https://www.hockey-reference.com/teams/COL/2022.html" target="_blank">Hockey
-                        Reference</a> for NHL statistics</li>
-            </ul>
-        </div>
-    </div>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/d3-contour.v1.min.js"></script>
-    <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
-    <script src="colorlegend.js"></script>
-    <script src="boxplot.js"></script>
-    <script src="calendar.js"></script>
-    <script src="cummulative_game_stats.js"></script>
-    <script src="stacked_bar_horiz.js"></script>
-    <script src="shots_analysis.js"></script>
-    <script src="turnovers.js"></script>
-    <script src="rink_map.js"></script>
-    <script src="goals_analysis.js"></script>
 
 </html>
