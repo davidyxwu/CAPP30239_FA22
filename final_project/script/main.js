@@ -240,7 +240,6 @@ d3.csv("../data/team_stats_shots.csv").then((data) => {
 });
 
 // Scatterplot for shot danger
-// https://www.reddit.com/r/hockey/comments/skrxfk/high_danger_shots_and_goals_per_team/
 d3.csv("../data/danger_stats.csv").then((data) => {
     function color(d) {
         return d.team == "COL" ? "red" : "blue";

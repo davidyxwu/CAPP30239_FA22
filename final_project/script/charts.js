@@ -258,7 +258,7 @@ function boxplotStats(data, valueof) {
 
 /* Calendar Chart */
 // 82 game calendar chart results for the Avalanche
-function calendar(divid) {
+function calendar() {
     const xDomainCalendar = 18,
         yDomainCalendar = 5;
 

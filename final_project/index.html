@@ -13,24 +13,27 @@
 
 <body>
     <div id="container">
-        <h1>Colorado Avalanche 2021-2022 Regular Season</h1>
+        <h1>Colorado Avalanche 2021-2022 Regular Season <img src="media/avalanche.svg"
+                alt="Colorado Avalanche Won the Stanley Cup" width=50, height=50>
+        </h1>
         <p>
-            In the 2021-2022 NHL season, the Colorado Avalanche won their third Stanley Cup in franchise history.
-            The Avs finished atop the Western Conference and second in the league with 119 points, setting a
-            franchise record. They also had the fifth-longest home-ice winning streak in NHL history with 18
-            games—making for a thrilling ride in both the regular season and the playoffs.
+            In the 2021-2022 NHL season, the Colorado Avalanche won their third Stanley Cup in franchise history. The
+            Avs finished atop the Western Conference and second in the league with 119 points, setting a franchise
+            record. They also had the fifth-longest home-ice winning streak in NHL history with 18 games—making for a
+            thrilling ride in both the regular season and the playoffs [9].
         </p>
+        <br>
         <p>
             One of the keys to the Avs success was their high-powered offense. While superstar Nathan MacKinnon and
-            Norris Trophy Winner (Top Defenseman) Cale Makar stole headlines, the Avs offense was well distributed
-            with eight different players having 50+ point (goals + assists) seasons and four having 80+ point
-            seasons.
+            Norris Trophy Winner (Top Defenseman) Cale Makar stole headlines, the Avs offense was well distributed with
+            eight different players having 50+ point (goals + assists) seasons and four having 80+ point seasons [10].
         </p>
+        <br>
         <p>
             In this article, we will give context to the Avs historic 2021-2022 regular season and then examine
             their offensive statistics compared to the league to understand how they dominated.
-
         </p>
+
         <div id="seasonalTrends">
             <h2>An Overview of Seasonal Trends</h2>
 
@@ -43,13 +46,14 @@
             <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
                     target="_blank" rel="noopener noreferrer">NHL Stats API</a>.</small>
             <br>
+            <br>
             <p>
                 The Avalanche finished with a 56-19-7 (Win-Loss-Shootout Loss) record with 119 points. Overall, they
                 finished with an average goal differential of 0.93 difference per game—meaning on average, the Avs
-                finished almost 1 goal ahead of the other team. Their largest margin of victory was 6 goals, which they
-                achieved 3 times, and their largest margin of defeat was 5 goals, happening only once. Further, they had
-                many large winning streaks, for example, games 67-75.
-
+                finished almost 1 goal ahead of the other team. This number was good for fourth in the league, standing
+                respectfully among the Stanley Cup contenders during the season. Their largest margin of victory was 6
+                goals, which they achieved 3 times, and their largest margin of defeat was 5 goals, happening only once
+                [2].
             </p>
 
             <div id="winsLine">
@@ -62,10 +66,12 @@
 
             <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
                     target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
-
+            <br>
+            <br>
             <p>
                 Despite a slow start to the season, we see that the Avs surpassed the expected linear win curve over the
-                82 game season.
+                82 game season, surpassing the expected amount by 16 games. Further, we see that the Avs had multiple
+                large winning streaks, for example, games 67-75, where they dominated the league [2].
             </p>
 
             <div id="shotsfor">
@@ -77,10 +83,19 @@
 
             <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
                     rel="noopener noreferrer">Moneypuck</a></small>
-
-
-            <small>Data and danger metrics from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
-                    rel="noopener noreferrer">Moneypuck</a></small>
+            <br>
+            <br>
+            <p>
+                We see that the Avs finished third in total shots forced with 5159 [1]. We can discern many things from
+                this stacked bar chart. To begin, by maximizing shots, the Avs were able to create more chances to score
+                compared to other teams. Further, the Avs finished fourth in shots on goal, meaning that they not only
+                maximized shots, but also maintained constant pressure by shooting high quality shots that would add
+                pressure to the goalie and defense. On a per game basis, this was 35.05 shots on goal per game. This
+                constant pressure on the defense and goalie meant more opportunities for mistakes and increased mental
+                and physical strain on the opposition. Lastly, the number of shots is also an indicator of time spent on
+                offense. The more time the Avs spent on offense, the less time the puck was in their danger zone, i.e
+                “The best defense is a good offense”.
+            </p>
 
             <div id="goalsBox">
                 <h3>Goals Boxplot</h3>
@@ -91,28 +106,53 @@
 
             <small>Data from <a href="https://www.moneypuck.com/glossary.htm" target="_blank"
                     rel="noopener noreferrer">Moneypuck</a></small>
-
+            <br>
+            <br>
             <p>
-                Additionally, the Avs finished third in the league with total shots, and third in the league for goals
-                scored.
+                Their strategy of shot creation translated towards goals, scoring 308 total, good for fourth in the
+                league. With this, it is clear that among seasonal statistics, the Avs stood among the league’s
+                contenders for the Cup. Ultimately, with their experience and ability, they persevered through the
+                playoffs—a high pressure environment where anything can happen—to win the cup.
             </p>
         </div>
 
 
 
-        <div id="shotsGoals">
-            <h2>Where did these shots come from?</h2>
+        <div id="shotQuality">
+            <h2>What about shot quality? An in depth analysis of the Avs offense</h2>
+
+            <p>
+                While we previously saw that the Avs (COL) shot the puck a lot, by examining heuristics such as shot
+                outcome and shot danger, we can better understand the shot makeup that the Avs employed to drive their
+                offense.
+            </p>
 
             <div id="shotMap">
-                <h3>Shot Map</h3>
+                <h3>Shot Heat Map</h3>
             </div>
             <small>Shot heat map for the Avalanche.</small>
             <br>
 
             <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
                     target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
+            <br>
+            <br>
+            <p>
+                From past goal data [2], the most dangerous area of the rink is a home plate shaped space that begins in
+                front of an opponent’s net and widens out to the faceoff dots in the offensive zone [8]. As such,
+                offenses try to get “to the dirty areas” to take a majority of their shots right in front of the net.
+                Not only are these shots easier to hit on target, they also help maximize second chances that are close
+                to the net, increasing the likelihood of putting the puck past the goalkeeper. From our shot map, we see
+                that the Avalanche shot a majority of their shots within this zone.
+            </p>
 
             <h2>What Resulted from these shots?</h2>
+
+            <p>
+                Unsurprisingly, we notice that the Avs scored the majority of their goals from the danger zone in front
+                of the net, with a sparse number of goals from the blue line from their excellent defensemen such as
+                Cale Makar.
+            </p>
 
             <div id="goalsMap">
                 <h3>Goals Map</h3>
@@ -124,8 +164,25 @@
             <small>Data from games endpoint in the <a href="https://gitlab.com/dword4/nhlapi/-/tree/master/"
                     target="_blank" rel="noopener noreferrer">NHL Stats API</a></small>
 
+            <h2>Efficiency is also important!</h2>
+
+            <p>
+                While it is important to talk about creating opportunities, it is also important to determine
+                whether teams are able to capitalize on these opportunities, i.e. efficiency. Moneypuck [7] provides a
+                shot danger statistic, where they define “High Danger Shots” as “Unblocked Shot attempts with >= 20%
+                probability of being a goal. High danger shots account for ~5% of shots and ~33% of goals”. From our
+                discussion above, these tend to be closer shots in front of goal, or those with an unblocked view on
+                goal. While these account for ~5% of shots, they account for ~33% of goals, meaning these shots have
+                really high conversion rates! Looking at the scatterplot, the Avs not only created many high danger
+                shots per game, they were also able to capitalize on these shots and score. As such, they were not only
+                good at creating dangerous shots every game, they were also able to successfully convert these shots,
+                meaning they were efficient in converting their chances. This efficiency vs. creation measure is an
+                important measure in determining offensive efficiency, and as such, the best offensive teams (FLA, TOR,
+                COL, EDM) all had similar measures.
+            </p>
+
             <div id="dangerAnalysis">
-                <h2>High Danger Shots and Goals By Team</h2>
+                <h3>High Danger Shots and Goals By Team</h3>
             </div>
 
             <small>
@@ -145,6 +202,12 @@
             <div id="turnovers">
                 <h2>Protecting the Puck = More Scoring Chances</h2>
 
+                <p>
+                    The Avs were very good at protecting the puck, finishing second lowest for total giveaways [1].
+                    By protecting the puck, the Avs were able to maximize their offense time, minimize chances for the
+                    other team, and consistently apply offensive pressure on the other team.
+                </p>
+
                 <div id="turnoversBox">
                     <h3>Giveaways Box Plot</h3>
                 </div>
@@ -159,15 +222,94 @@
 
             <div id="conclusion">
                 <h2>Conclusion</h2>
+
+                <p>
+                    Overall, there are a number of factors that explain the Avs offensive prowess in the 2021-2022
+                    regular season. To begin, the Avs piled on shots—especially in danger zones—in order to maximize
+                    their chances at goal. Not only were they creating a lot of quality chances, they were also
+                    efficiently converting them to goals. Finally, by protecting the puck, the Avs were able to maximize
+                    their offense time and diminish scoring chances for the other team.
+                </p>
+
             </div>
 
             <div id="process">
                 <h2>Reflecting On The Process</h2>
+                <p>
+                    For my final project, I chose to analyze hockey statistics because I have always been interested in
+                    sports statistics. However, as I am far less familiar with hockey compared to other sports, I took
+                    this opportunity to gain a better understanding of hockey analytics.
+                </p>
+                <br>
+                <p>
+                    My data is primarily sourced from two sources: Money Puck [1] for overall season data and the
+                    official NHL Stats API [2] for game by game statistics. The NHL Stats API is the official source of
+                    truth for all NHL stats, and sources such as Moneypuck derive statistics from it.
+                </p>
+                <br>
+                <p>
+                    When initially faced with the data, I felt overwhelmed in terms of what aspect of the season to
+                    focus on. There are a wide variety of stats in the NHL—both offensive, defensive, 5v5, 4v5, and
+                    more—meaning analysis could be long winded and unfocused. As such, my initial hurdle was looking at
+                    the Avs season and focusing on some of the main reasons they were successful. After reading
+                    descriptions of their season [9] [10], it was clear that the Avs offensive prowess was one of the
+                    main reasons for their success. Thus, I was able to select the statistics I was interested in: shot,
+                    goal, and puck possession data. However, it was not enough to just plot overall seasonal statistics.
+                    As such, I tried to combine data points and discuss shot/goal efficiency alongside total number of
+                    shots/goals to explain how the Avalanche stood out compared to the league. Further, puck possession
+                    data supplements the above offensive efficiency argument.
+                </p>
+                <br>
+                <p>
+                    After collecting my data, I first aimed to give context on the season. To display overall game
+                    results, I chose to use a calendar heat map to easily see individual game results at a glance. This
+                    chart used a green red color scale, as these two diverging colors are often used to indicate wins
+                    vs. losses. By using line graphs to display wins over the 82 games, we can understand how the
+                    Avalanche surpassed the league average to give context on their historic season. For comparisons
+                    between the Avalanche and the league, I chose to use red for the Avalanche to match their team
+                    color. I then used a contrasting color blue to highlight the rest of the league. To analyze
+                    individual heuristics (shot, goal, puck possession), I chose to use a variety of charts. The first
+                    chart I used was a heat map binned in hexagons for shots and goals to contextualize the locations of
+                    these events on the rink. Colors such as green for shots indicate where they took shots (the more
+                    the better). Red indicates danger (the redder the more dangerous), which is fitting to display
+                    goals. I chose to use a stacked bar chart (both cumulative and percentage) to easily compare shot
+                    statistics across teams and categories. I chose to use a scatter plot to display relationship data
+                    (efficiency vs. totals) for all teams. Lastly, I chose to use box plots to show distributions of
+                    certain statistics to compare them among all the teams. Colors for these charts were chosen from
+                    well known color schemes to display qualitative data. In all, my color choices were chosen to be
+                    consistent across charts and fit sequential, qualitative, and diverging data. Because I was
+                    analyzing sports statistics, I did not have many ethical considerations. If anything, I tended to
+                    avoid talking about individual players and focus on the team as a whole to avoid bias towards
+                    certain players.
+                </p>
+                <br>
+                <p>
+                    While I was able to come up with many different visualizations for the data I gathered, I also came
+                    across many limitations in the process. First, it was hard to contextualize data depending on game
+                    state. For example, hockey has many game scenarios (5v5, 4v5, etc.) which allow for different styles
+                    of play depending on the situation. While my approach focused on all game situations, by not
+                    contextualizing all of the different scenarios, we are unable to understand whether the Avs take
+                    advantage of penalties etc. Another limitation I came up against was trying to understand what the
+                    Avs did differently compared to other teams. All teams follow similar proven offensive philosophies
+                    that maximize scoring chances. However, the Avs capitalized on a high number of their dangerous
+                    chances, while also creating a high number of dangerous chances. While this is one explanation for a
+                    difference, there are certainly many other ones that show up when different visualizations are used.
+                    Further, solely focusing on offense does not paint the whole picture of the season. Defense,
+                    goalkeeping, and discipline (penalties) are a huge part of the game which I did not discuss in this
+                    article.
+                </p>
+                <br>
+                <p>
+                    In summary, I had a lot of fun and learned a lot through the process. While I did not have many
+                    problems coding, I faced many design decisions with color choices, chart placement, and
+                    storytelling.
+                </p>
+
             </div>
 
             <div id="resources">
                 <h2>Resources</h2>
-                <ul>
+                <ol>
                     <li>Overall season trend data from
                         <a href="https://moneypuck.com/data.htm" target="_blank" rel="noopener noreferrer">Money
                             Puck</a>
@@ -210,7 +352,10 @@
                             target="_blank">Stat Muse</a> and <a
                             href=" https://www.hockey-reference.com/teams/COL/2022.html" target="_blank">Hockey
                             Reference</a> for NHL statistics</li>
-                </ul>
+                    <li>
+                        All photos from the NHL
+                    </li>
+                </ol>
             </div>
         </div>
         <script src="https://d3js.org/d3.v7.min.js"></script>
