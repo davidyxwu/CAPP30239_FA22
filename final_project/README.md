@@ -68,9 +68,8 @@ Special thanks to these links and resources for template code, data, and context
           Recap</a></li>
 
   <li><a href="https://www.statmuse.com/nhl/ask/average-winning-margin-for-the-colorado-avalanche"
-          target="_blank">Stat Muse</a> and <a
-          href=" https://www.hockey-reference.com/teams/COL/2022.html" target="_blank">Hockey
-          Reference</a> for NHL statistics</li>
+          target="_blank">Stat Muse</a> and 
+          <a href=" https://www.hockey-reference.com/teams/COL/2022.html" target="_blank">Hockey Reference</a> for NHL statistics</li>
   <li>
       All photos from the NHL
   </li>
