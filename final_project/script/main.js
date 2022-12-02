@@ -103,9 +103,9 @@ d3.csv("../data/team_stats_goals.csv").then((data) => {
     var plotStats = [
         { type: "COL", value: colStats[0].goalsFor },
         { type: "Min", value: stats.fiveNums[0] },
-        { type: "First Quartile", value: stats.fiveNums[1] },
+        { type: "1st Quartile", value: stats.fiveNums[1] },
         { type: "Median", value: stats.fiveNums[2] },
-        { type: "Third Quartile", value: stats.fiveNums[3] },
+        { type: "3rd Quartile", value: stats.fiveNums[3] },
         { type: "Max", value: stats.fiveNums[4] },
     ];
     svg.append("g")
@@ -125,7 +125,7 @@ d3.csv("../data/team_stats_goals.csv").then((data) => {
         .attr("x", (d) => x(d.value))
         .attr("y", height - margin.bottom - 10)
         .attr("text-anchor", "middle")
-        .text((d) => d.type)
+        .text((d) => d.type + " (" + d.value + ")")
         .style("font-size", "12px")
         .style("fill", (d) => color(d));
 });
@@ -173,9 +173,9 @@ d3.csv("../data/team_stats_turnovers.csv").then((data) => {
     var plotStats = [
         { type: "COL", value: colStats[0].giveawaysFor },
         { type: "Min", value: stats.fiveNums[0] },
-        { type: "First Quartile", value: stats.fiveNums[1] },
+        { type: "1st Quartile", value: stats.fiveNums[1] },
         { type: "Median", value: stats.fiveNums[2] },
-        { type: "Third Quartile", value: stats.fiveNums[3] },
+        { type: "3rd Quartile", value: stats.fiveNums[3] },
         { type: "Max", value: stats.fiveNums[4] },
     ];
     svg.append("g")
@@ -195,7 +195,7 @@ d3.csv("../data/team_stats_turnovers.csv").then((data) => {
         .attr("x", (d) => x(d.value))
         .attr("y", height - margin.bottom - 10)
         .attr("text-anchor", "middle")
-        .text((d) => d.type)
+        .text((d) => d.type + "\n (" + d.value + ")")
         .style("font-size", "12px")
         .style("fill", (d) => color(d));
 });
