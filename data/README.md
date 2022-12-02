@@ -34,3 +34,12 @@ Sourced from the NHL stats API, this data cummulates data such as goals, wins, a
 ## Game by game individual stats
 This data is found in [team_games_indiv_stats.csv](team_games_indiv_stats.csv).
 Sourced from the NHL stats API, this data contains the scores of every Avalanche game and the game result. 
+
+## Avalanche Shot map coordinate data
+This data is found in [team_shot_map.csv](team_shot_map.csv).
+Sourced from the NHL stats API, this data contains the coordinates of every shot and the result.
+
+## Avalanche shot/goal danger analysis
+This data is found in [danger_stats.csv](danger_stats.csv). 
+Sourced from Moneypuck, this data contains all data on shot/goal danger statistics.
+
