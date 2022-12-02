@@ -1,4 +1,8 @@
-// Ice rink map sourced from https://github.com/war-on-ice/icerink
+/*
+    This file contins a template for an ice rink map
+    Ice rink map sourced from https://github.com/war-on-ice/icerink
+*/
+
 var RINK_MAP = function RinkMap(config) {
     // all distances are in FT
     var RINK_CONFIG = {

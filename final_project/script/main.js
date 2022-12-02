@@ -1,12 +1,14 @@
+/*
+    This file formats and displays all charts onto the article
+*/
+
 // Game calendar
 calendar();
 
-// Multiline
+// Multiline for wins
 d3.csv("../data/team_games_cummulative_stats.csv").then((data) => {
     // Gather data for formatting
     var win_data = [];
-    var shots_data = [];
-    var goals_data = [];
     for (let d of data) {
         d.game_num = parseInt(d.game_num);
         win_data.push({
@@ -20,30 +22,6 @@ d3.csv("../data/team_games_cummulative_stats.csv").then((data) => {
             Game: d.game_num,
             Value: +d.league_wins,
         });
-
-        shots_data.push({
-            Team: "COL",
-            Game: d.game_num,
-            Value: +d.team_shots,
-        });
-
-        shots_data.push({
-            Team: "League",
-            Game: d.game_num,
-            Value: +d.league_shots,
-        });
-
-        goals_data.push({
-            Team: "COL",
-            Game: d.game_num,
-            Value: +d.team_goals,
-        });
-
-        goals_data.push({
-            Team: "League",
-            Game: d.game_num,
-            Value: +d.league_goals,
-        });
     }
     // Draw the lines
     multiline(win_data, "#winsLine", "Wins");
@@ -56,153 +34,35 @@ d3.csv("../data/team_shot_map.csv").then((data) => {
     heatmap(filteredData, "red", "Number of goals", "#goalsMap");
 });
 
-// https://www.clickinsight.ca/blog/building-nhl-shot-maps-with-apps-script-bigquery-and-data-studio
-// https://observablehq.com/@mbrownshoes/nhl-shot-and-goal-locations-for-every-goalie?collection=@mbrownshoes/playground
-
 // Goals Boxplot
 d3.csv("../data/team_stats_goals.csv").then((data) => {
-    function color(d) {
-        if (d.type == "COL") return "red";
-        else if (d.type == "Median") return "olive";
-        else if (d.type == "Min" || d.type == "Max") return "maroon";
-        return "teal";
-    }
-    let height = 200,
-        width = 800,
-        margin = { top: 10, right: 50, bottom: 50, left: 50 };
+    // Filter data for boxplot function
     var dataPoints = [];
-    const svg = d3
-        .select("#goalsBox")
-        .append("svg")
-        .attr("viewBox", [0, 0, width, height]);
     for (let d of data) {
         d.goalsFor = +d.goalsFor;
         dataPoints.push(+d.goalsFor);
     }
-    // Stats
-    var stats = boxplotStats(dataPoints);
-    var x = d3
-        .scaleLinear()
-        .domain(d3.extent(dataPoints))
-        .range([margin.left, width - margin.right]);
-    var plot = boxplot()
-        .scale(x)
-        .bandwidth(75)
-        .jitter(0.3)
-        .opacity(0.5)
-        .showInnerDots(true);
-    svg.datum(stats).attr("color", "mediumpurple").call(plot);
 
-    svg.append("g")
-        .attr("transform", `translate(0,${height - margin.bottom})`)
-        .attr("class", "x-axis")
-        .attr("color", "black")
-        .call(d3.axisBottom(x));
-    // Display all stats in a line below
-    var colStats = data.filter((d) => d.team == "COL");
-    var plotStats = [
-        { type: "COL", value: colStats[0].goalsFor },
-        { type: "Min", value: stats.fiveNums[0] },
-        { type: "1st Quartile", value: stats.fiveNums[1] },
-        { type: "Median", value: stats.fiveNums[2] },
-        { type: "3rd Quartile", value: stats.fiveNums[3] },
-        { type: "Max", value: stats.fiveNums[4] },
-    ];
-    svg.append("g")
-        .selectAll("circle")
-        .data(plotStats)
-        .join("circle")
-        .attr("cx", (d) => x(d.value))
-        .attr("cy", 0)
-        .attr("r", 3)
-        .attr("transform", `translate(0,${height - margin.bottom})`)
-        .attr("opacity", 1)
-        .style("fill", (d) => color(d));
-    var points = svg.selectAll("g.circle").data(data).enter().append("g");
-    points
-        .append("text")
-        .data(plotStats)
-        .attr("x", (d) => x(d.value))
-        .attr("y", height - margin.bottom - 10)
-        .attr("text-anchor", "middle")
-        .text((d) => d.type + " (" + d.value + ")")
-        .style("font-size", "12px")
-        .style("fill", (d) => color(d));
+    drawBoxPlot(data, dataPoints, "#goalsBox");
 });
 
 // Turnovers Boxplot
 d3.csv("../data/team_stats_turnovers.csv").then((data) => {
-    function color(d) {
-        if (d.type == "COL") return "red";
-        else if (d.type == "Median") return "olive";
-        else if (d.type == "Min" || d.type == "Max") return "maroon";
-        return "teal";
-    }
-    let height = 200,
-        width = 800,
-        margin = { top: 10, right: 50, bottom: 50, left: 50 };
     var dataPoints = [];
-    const svg = d3
-        .select("#turnoversBox")
-        .append("svg")
-        .attr("viewBox", [0, 0, width, height]);
+
     for (let d of data) {
         d.giveawaysFor = +d.giveawaysFor;
         dataPoints.push(+d.giveawaysFor);
     }
-    var stats = boxplotStats(dataPoints);
-    var x = d3
-        .scaleLinear()
-        .domain(d3.extent(dataPoints))
-        .range([margin.left, width - margin.right]);
-    var plot = boxplot()
-        .scale(x)
-        .bandwidth(75)
-        .jitter(0.3)
-        .opacity(0.5)
-        .showInnerDots(true);
-    svg.datum(stats).attr("color", "mediumpurple").call(plot);
 
-    svg.append("g")
-        .attr("transform", `translate(0,${height - margin.bottom})`)
-        .attr("class", "x-axis")
-        .attr("color", "black")
-        .call(d3.axisBottom(x));
-
-    var colStats = data.filter((d) => d.team == "COL");
-    var plotStats = [
-        { type: "COL", value: colStats[0].giveawaysFor },
-        { type: "Min", value: stats.fiveNums[0] },
-        { type: "1st Quartile", value: stats.fiveNums[1] },
-        { type: "Median", value: stats.fiveNums[2] },
-        { type: "3rd Quartile", value: stats.fiveNums[3] },
-        { type: "Max", value: stats.fiveNums[4] },
-    ];
-    svg.append("g")
-        .selectAll("circle")
-        .data(plotStats)
-        .join("circle")
-        .attr("cx", (d) => x(d.value))
-        .attr("cy", 0)
-        .attr("r", 3)
-        .attr("transform", `translate(0,${height - margin.bottom})`)
-        .attr("opacity", 1)
-        .style("fill", (d) => color(d));
-    var points = svg.selectAll("g.circle").data(data).enter().append("g");
-    points
-        .append("text")
-        .data(plotStats)
-        .attr("x", (d) => x(d.value))
-        .attr("y", height - margin.bottom - 10)
-        .attr("text-anchor", "middle")
-        .text((d) => d.type + "\n (" + d.value + ")")
-        .style("font-size", "12px")
-        .style("fill", (d) => color(d));
+    drawBoxPlot(data, dataPoints, "#turnoversBox");
 });
 
 // Shots On Goal stacked bar chart
 d3.csv("../data/team_stats_shots.csv").then((data) => {
     const width = 900;
+
+    // Filter Data
     const shots_for_zDomain = [
         "shotsOnGoalFor",
         "missedShotsFor",
@@ -217,6 +77,7 @@ d3.csv("../data/team_stats_shots.csv").then((data) => {
         }))
     );
 
+    // Chart
     var shotsForChart = StackedBarChart(shotsFor, {
         x: (d) => d.total,
         y: (d) => d.team,
@@ -241,18 +102,21 @@ d3.csv("../data/team_stats_shots.csv").then((data) => {
 
 // Scatterplot for shot danger
 d3.csv("../data/danger_stats.csv").then((data) => {
+    // Color for scatterplot
     function color(d) {
         return d.team == "COL" ? "red" : "blue";
     }
+
     let height = 400,
         width = 800,
         margin = { top: 15, right: 50, bottom: 40, left: 50 };
+
+    // Filter Data
     for (let d of data) {
         d.highDangerShotsForPerGame = parseInt(d.highDangerShotsFor) / 82;
         d.highDangerGoalsForPerShot =
             parseInt(d.highDangerGoalsFor) / parseInt(d.highDangerShotsFor);
     }
-    console.log(data);
 
     const svg = d3
         .select("#dangerAnalysis")
@@ -308,6 +172,7 @@ d3.csv("../data/danger_stats.csv").then((data) => {
         .attr("transform", "rotate(-90)")
         .text("Goals per High Danger Shot");
 
+    // Tooltip
     const tooltip = d3
         .select("body")
         .append("div")
@@ -338,7 +203,7 @@ d3.csv("../data/danger_stats.csv").then((data) => {
             d3.select(this).attr("fill", "black");
             tooltip.style("visibility", "hidden");
         });
-    // ADD SWATCHES
+    // Swatches Legend
     var swatchLegend = Swatches(
         d3.scaleOrdinal(["Colorado Avalanche", "League"], ["red", "blue"])
     );

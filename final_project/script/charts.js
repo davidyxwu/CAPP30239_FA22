@@ -1,5 +1,5 @@
 /*
-This file includes code for all charts used for the article
+    This file includes template code for all charts used for the article
 */
 
 // Boxplot From Alan Kang https://github.com/akngs/d3-boxplot
@@ -256,6 +256,84 @@ function boxplotStats(data, valueof) {
     return { fiveNums, iqr, step, fences, boxes, whiskers, points };
 }
 
+// Draw a boxplot with the given data and div
+function drawBoxPlot(data, dataPoints, divID) {
+    // Color function for scale
+    function color(d) {
+        if (d.type == "COL") return "red";
+        else if (d.type == "Median") return "olive";
+        else if (d.type == "Min" || d.type == "Max") return "maroon";
+        return "teal";
+    }
+
+    let height = 200,
+        width = 800,
+        margin = { top: 10, right: 50, bottom: 50, left: 50 };
+
+    const svg = d3
+        .select(divID)
+        .append("svg")
+        .attr("viewBox", [0, 0, width, height]);
+
+    // Stats for boxplot
+    var stats = boxplotStats(dataPoints);
+
+    // Plot
+    var x = d3
+        .scaleLinear()
+        .domain(d3.extent(dataPoints))
+        .range([margin.left, width - margin.right]);
+    var plot = boxplot()
+        .scale(x)
+        .bandwidth(75)
+        .jitter(0.3)
+        .opacity(0.5)
+        .showInnerDots(true);
+    svg.datum(stats).attr("color", "mediumpurple").call(plot);
+
+    svg.append("g")
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .attr("class", "x-axis")
+        .attr("color", "black")
+        .call(d3.axisBottom(x));
+    // Display all stats in a line below
+    var colStats = data.filter((d) => d.team == "COL");
+    var plotStats = [
+        {
+            type: "COL",
+            value: colStats[0].goalsFor || colStats[0].giveawaysFor,
+        },
+        { type: "Min", value: stats.fiveNums[0] },
+        { type: "1st Quartile", value: stats.fiveNums[1] },
+        { type: "Median", value: stats.fiveNums[2] },
+        { type: "3rd Quartile", value: stats.fiveNums[3] },
+        { type: "Max", value: stats.fiveNums[4] },
+    ];
+
+    svg.append("g")
+        .selectAll("circle")
+        .data(plotStats)
+        .join("circle")
+        .attr("cx", (d) => x(d.value))
+        .attr("cy", 0)
+        .attr("r", 3)
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .attr("opacity", 1)
+        .style("fill", (d) => color(d));
+
+    var points = svg.selectAll("g.circle").data(data).enter().append("g");
+
+    points
+        .append("text")
+        .data(plotStats)
+        .attr("x", (d) => x(d.value))
+        .attr("y", height - margin.bottom - 10)
+        .attr("text-anchor", "middle")
+        .text((d) => d.type + " (" + d.value + ")")
+        .style("font-size", "12px")
+        .style("fill", (d) => color(d));
+}
+
 /* Calendar Chart */
 // 82 game calendar chart results for the Avalanche
 function calendar() {
@@ -409,6 +487,7 @@ function multiline(data, div_id, y_label) {
         .line()
         .x((d) => x(d.Game))
         .y((d) => y(d.Value));
+
     // Graph team and league
     for (let team of ["COL", "League"]) {
         let color = team == "COL" ? "red" : "blue";
@@ -448,6 +527,7 @@ function multiline(data, div_id, y_label) {
     d3.select(div_id).append("div").node().innerHTML = swatchLegend;
 }
 
+// Stacked Bar Chart
 // Copyright 2021 Observable, Inc.
 // Released under the ISC license.
 // https://observablehq.com/@d3/stacked-horizontal-bar-chart
@@ -634,6 +714,7 @@ function heatmap(data, color, legendTitle, divid) {
         .range([0, 1364.7058823529412 / 2]);
 
     y = d3.scaleLinear().domain([-42.5, 42.5]).range([610, 40]);
+
     // Hexbin inputs
     var inputForHexbinFun = [];
     data.forEach(function (d) {

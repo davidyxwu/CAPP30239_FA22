@@ -1,3 +1,7 @@
+/*
+    This file includes code for all legends used for the article
+*/
+
 // Copyright 2021, Observable Inc.
 // Released under the ISC license.
 // https://observablehq.com/@d3/color-legend
