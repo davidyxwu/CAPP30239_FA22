@@ -20,8 +20,11 @@ Check out my project [here](https://davidyxwu.github.io/CAPP30239_FA22/final_pro
 This directory includes links to all Javascript files. All code is written in Javascript using the d3 library. 
 
 `charts.js`: Template code for all charts used in the article using d3. 
+
 `colorlegend.js`: Template code for color legend and swatches using d3. 
+
 `main.js`: Drawing and styling all charts onto the article.
+
 `rink_map.js`: Drawing a hockey rink using d3. 
 
 ### Style 
