@@ -191,7 +191,7 @@ d3.csv("../data/danger_stats.csv").then((data) => {
             tooltip
                 .style("visibility", "visible")
                 .html(
-                    `Team: ${d.team}<br />High Danger Shots (Total): ${d.highDangerShotsFor}<br />High Danger Shots (Total): ${d.highDangerGoalsFor}`
+                    `Team: ${d.team}<br />High Danger Shots (Total): ${d.highDangerShotsFor}<br />High Danger Goals (Total): ${d.highDangerGoalsFor}`
                 );
         })
         .on("mousemove", function (event) {
